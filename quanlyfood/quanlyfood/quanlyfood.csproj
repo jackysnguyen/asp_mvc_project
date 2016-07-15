@@ -199,20 +199,59 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dbQLFood.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbQLFood.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\general_foundicons.css" />
+    <Content Include="Content\prettify.css" />
+    <Content Include="Content\social_foundicons.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\general_foundicons.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\social_foundicons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\caprese.jpg" />
+    <Content Include="images\circle.jpg" />
+    <Content Include="images\circle2.jpg" />
+    <Content Include="images\cookies.jpg" />
+    <Content Include="images\droplets.jpg" />
+    <Content Include="images\fingerfood-main.jpg" />
+    <Content Include="images\fingerfood.jpg" />
+    <Content Include="images\food2.jpg" />
+    <Content Include="images\food3.jpg" />
+    <Content Include="images\full-image.jpg" />
+    <Content Include="images\glyphicons-halflings-white.png" />
+    <Content Include="images\glyphicons-halflings.png" />
+    <Content Include="images\gourmandises.jpg" />
+    <Content Include="images\home-1.jpg" />
+    <Content Include="images\home-2.jpg" />
+    <Content Include="images\home-3.jpg" />
+    <Content Include="images\kitchen.jpg" />
+    <Content Include="images\placeholder.gif" />
+    <Content Include="images\placeholder.png" />
+    <Content Include="images\placeholder2.gif" />
+    <Content Include="images\placeholder3.jpg" />
+    <Content Include="images\plate.jpg" />
+    <Content Include="images\refreshment.jpg" />
+    <Content Include="images\roll.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -220,6 +259,29 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Models\dbQLFood.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbQLFood.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\social_foundicons.eot" />
+    <Content Include="fonts\social_foundicons.ttf" />
+    <Content Include="fonts\social_foundicons.woff" />
+    <Content Include="fonts\general_foundicons.eot" />
+    <Content Include="fonts\general_foundicons.ttf" />
+    <Content Include="fonts\general_foundicons.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\museo_slab_300-webfont.eot" />
+    <Content Include="fonts\museo_slab_300-webfont.ttf" />
+    <Content Include="fonts\museo_slab_500-webfont.eot" />
+    <Content Include="fonts\museo_slab_500-webfont.ttf" />
+    <Content Include="fonts\proximanova-sbold-webfont.eot" />
+    <Content Include="fonts\proximanova-sbold-webfont.ttf" />
+    <Content Include="fonts\proximanova-webfont.eot" />
+    <Content Include="fonts\proximanova-webfont.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -267,10 +329,12 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\HelloWorld\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutMain.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\test\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -282,6 +346,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\dbQLFood.dbml.layout">
+      <DependentUpon>dbQLFood.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
