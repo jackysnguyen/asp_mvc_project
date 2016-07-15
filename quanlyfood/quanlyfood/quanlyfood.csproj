@@ -79,6 +79,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -202,12 +203,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbQLFood.designer.cs">
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\dbFoodLinQ.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbQLFood.dbml</DependentUpon>
+      <DependentUpon>dbFoodLinQ.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -260,11 +261,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Models\dbQLFood.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbQLFood.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="fonts\social_foundicons.eot" />
     <Content Include="fonts\social_foundicons.ttf" />
     <Content Include="fonts\social_foundicons.woff" />
@@ -283,6 +279,11 @@
     <Content Include="fonts\proximanova-sbold-webfont.ttf" />
     <Content Include="fonts\proximanova-webfont.eot" />
     <Content Include="fonts\proximanova-webfont.ttf" />
+    <Content Include="Models\dbFoodLinQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbFoodLinQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -351,8 +352,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\dbQLFood.dbml.layout">
-      <DependentUpon>dbQLFood.dbml</DependentUpon>
+    <None Include="Models\dbFoodLinQ.dbml.layout">
+      <DependentUpon>dbFoodLinQ.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

@@ -23,7 +23,7 @@ namespace quanlyfood.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="quanyfood")]
-	public partial class dbQLFoodDataContext : System.Data.Linq.DataContext
+	public partial class dbFoodLinQDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -47,31 +47,31 @@ namespace quanlyfood.Models
     partial void DeleteMONAN(MONAN instance);
     #endregion
 		
-		public dbQLFoodDataContext() : 
+		public dbFoodLinQDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["quanyfoodConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLFoodDataContext(string connection) : 
+		public dbFoodLinQDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLFoodDataContext(System.Data.IDbConnection connection) : 
+		public dbFoodLinQDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLFoodDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public dbFoodLinQDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public dbQLFoodDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public dbFoodLinQDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();

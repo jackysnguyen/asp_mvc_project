@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbFoodLinQ">
+  <DataContextMoniker Name="/dbFoodLinQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="0b521d84-aad8-41a1-9036-0280681bff15" absoluteBounds="4.875, 1.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/CHITIETDONTHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6296066-7c76-4b00-bea0-6bd6f9554787" absoluteBounds="4.89, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46fa359c-56c0-45d7-8218-ac93d7628214" absoluteBounds="3.375, 2, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1006240e-00fb-4f94-b9a8-301e59a7c7b5" absoluteBounds="3.39, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.375 : 2); (4.375 : 1); (5.875 : 1); (5.875 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbFoodLinQDataContext/DONDATHANG/DONDATHANG_CHITIETDONTHANG" />
+      <nodes>
+        <classShapeMoniker Id="46fa359c-56c0-45d7-8218-ac93d7628214" />
+        <classShapeMoniker Id="0b521d84-aad8-41a1-9036-0280681bff15" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2fe17c48-185d-4f18-b20b-262d4d0f6194" absoluteBounds="7.875, 1.875, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9911185d-721b-47fc-9b0c-72b71ddc7216" absoluteBounds="7.89, 2.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 3.42714680989583); (7.45833333333333 : 3.42714680989583 : JumpStart); (7.29166666666667 : 3.42714680989583 : JumpEnd); (6.64583333333333 : 3.42714680989583 : JumpStart); (6.47916666666667 : 3.42714680989583 : JumpEnd); (5.375 : 3.42714680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbFoodLinQDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="2fe17c48-185d-4f18-b20b-262d4d0f6194" />
+        <classShapeMoniker Id="46fa359c-56c0-45d7-8218-ac93d7628214" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4dd0f9a7-18df-451c-acfc-787f88af929f" absoluteBounds="3.625, 1.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/LOAI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d12a5a57-b518-47c7-b371-4c601e9b7afd" absoluteBounds="3.64, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f59dfc5c-927c-450c-8159-e3feb18f4805" absoluteBounds="6.25, 4, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/MONAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d81bd56-6e1f-4835-8e0b-2195b3f9a3ae" absoluteBounds="6.265, 4.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5625 : 4); (6.5625 : 2.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbFoodLinQDataContext/MONAN/MONAN_CHITIETDONTHANG" />
+      <nodes>
+        <classShapeMoniker Id="f59dfc5c-927c-450c-8159-e3feb18f4805" />
+        <classShapeMoniker Id="0b521d84-aad8-41a1-9036-0280681bff15" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.0000005 : 1.375); (4.0000005 : 0.8); (7.375 : 0.8); (7.375 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbFoodLinQDataContext/LOAI/LOAI_MONAN" />
+      <nodes>
+        <classShapeMoniker Id="4dd0f9a7-18df-451c-acfc-787f88af929f" />
+        <classShapeMoniker Id="f59dfc5c-927c-450c-8159-e3feb18f4805" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
