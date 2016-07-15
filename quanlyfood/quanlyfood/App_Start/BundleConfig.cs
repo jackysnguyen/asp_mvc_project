@@ -25,6 +25,13 @@ namespace quanlyfood
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-responsive.css",
+                      "~/Content/custom.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/general-foundicons.css",
+                      "~/Content/prettify.css",
+                      "~/Content/social_foundicons.css",
+                      "~/Content/style.css",
                       "~/Content/site.css"));
         }
     }
