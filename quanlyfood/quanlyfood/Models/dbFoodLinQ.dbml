@@ -56,4 +56,36 @@
       <Association Name="LOAI_MONAN" Member="LOAI" ThisKey="MaLoai" OtherKey="MaLoai" Type="LOAI" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ADMIN" Member="ADMINs">
+    <Type Name="ADMIN">
+      <Column Name="username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BAIVIET" Member="BAIVIETs">
+    <Type Name="BAIVIET">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TieuDe" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoiDung" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DoanTrich" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Slug" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HinhDaiDien" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Loai" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MENU" Member="MENUs">
+    <Type Name="MENU">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Slug" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MenuOrder" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MENU_MENU" Member="MENUs" ThisKey="id" OtherKey="Parent" Type="MENU" />
+      <Association Name="MENU_MENU" Member="MENU1" ThisKey="Parent" OtherKey="id" Type="MENU" IsForeignKey="true" />
+    </Type>
+  </Table>
 </Database>

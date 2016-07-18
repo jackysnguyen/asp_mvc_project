@@ -16,6 +16,7 @@
     <link href="http://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet" type="text/css">
 </head>
 <body id="pageBody">
+    
     <div id="decorative2">
         <div class="container">
 
@@ -24,8 +25,8 @@
                     <div class="span12">
 
                         <div id="divLogo" class="pull-left">
-                            <a href="index.html" id="divSiteTitle">Your Name Here</a><br />
-                            <a href="index.html" id="divTagLine">Your Tag Line Here</a>
+                            <a href="index.html" id="divSiteTitle">Foodier</a><br />
+                            <a href="index.html" id="divTagLine">Cứ gọi là có</a>
                         </div>
 
                         <div id="divMenuRight" class="pull-right">
@@ -35,27 +36,21 @@
                                 </button>
                                 <div class="nav-collapse collapse">
                                     <ul class="nav nav-pills ddmenu">
-                                        <li class="dropdown active"><a href="index.html">Home</a></li>
-                                        <li class="dropdown"><a href="about.html">About</a></li>
-                                        <li class="dropdown">
-                                            <a href="page.html" class="dropdown-toggle">Page <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="full.html">Full Page</a></li>
-                                                <li><a href="2-column.html">Two Column</a></li>
-                                                <li><a href="3-column.html">Three Column</a></li>
-                                                <li><a href="../documentation/index.html">Documentation</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#" class="dropdown-toggle">Dropdown Item &nbsp;&raquo;</a>
-                                                    <ul class="dropdown-menu sub-menu">
-                                                        <li><a href="#">Dropdown Item</a></li>
-                                                        <li><a href="#">Dropdown Item</a></li>
-                                                        <li><a href="#">Dropdown Item</a></li>
+                                        @foreach (var menu in ViewBag.menus)
+                                        {
+                                            <li class="dropdown">
+                                                <a href="@menu.slug">@menu.ten</a>
+                                                @if (@menu.childrent.Count > 0)
+                                                {
+                                                    <ul class="dropdown-menu">
+                                                        @foreach (var menu_chilrent in @menu.childrent)
+                                                        {
+                                                            <li><a href="@menu_chilrent.slug">@menu_chilrent.ten</a></li>
+                                                        }
                                                     </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown"><a href="gallery.html">Gallery</a></li>
-                                        <li class="dropdown"><a href="contact.php">Contact</a></li>
+                                                }
+                                            </li>
+                                        }
                                     </ul>
                                 </div>
                             </div>
@@ -67,12 +62,15 @@
 
         </div>
     </div>
-    <div>
-        @RenderBody()
-    </div>
+
+    @RenderBody()
+
     <div id="contentOuterSeparator"></div>
-    
+
+   
+
     <div id="footerOuterSeparator"></div>
+
     <div id="divFooter" class="footerArea">
 
         <div class="container">
@@ -129,13 +127,13 @@
 
                         <ul id="contact-info">
                             <li>
-                                <i class="general foundicon-phone icon"></i>
+                                <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
                                 <span class="field">Phone:</span>
                                 <br />
-                                (123) 456 7890 / 456 7891
+                                (+84)90 7831 626
                             </li>
                             <li>
-                                <i class="general foundicon-mail icon"></i>
+                                <i class="fa fa-envelope fa-2x"></i>
                                 <span class="field">Email:</span>
                                 <br />
                                 <a href="mailto:info@yourdomain.com" title="Email">info@yourdomain.com</a>
@@ -157,7 +155,7 @@
                 <div class="row-fluid">
                     <div class="span12">
                         <p class="copyright">
-                            Copyright © 2013 Your Company. All Rights Reserved.
+                            Copyright © 2016 Foodier. All Rights Reserved.
                         </p>
 
                         <p class="social_bookmarks">
@@ -175,5 +173,8 @@
         </div>
 
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

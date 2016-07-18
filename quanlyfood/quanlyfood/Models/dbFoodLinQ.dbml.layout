@@ -27,7 +27,7 @@
         <elementListCompartment Id="9911185d-721b-47fc-9b0c-72b71ddc7216" absoluteBounds="7.89, 2.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.875 : 3.42714680989583); (7.45833333333333 : 3.42714680989583 : JumpStart); (7.29166666666667 : 3.42714680989583 : JumpEnd); (6.64583333333333 : 3.42714680989583 : JumpStart); (6.47916666666667 : 3.42714680989583 : JumpEnd); (5.375 : 3.42714680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 3.42714680989583); (7.45833333333333 : 3.42714680989583 : JumpStart); (7.29166666666667 : 3.42714680989583 : JumpEnd); (6.64583333333333 : 3.42714680989583 : JumpStart); (6.47916666666667 : 3.42714680989583 : JumpEnd); (5.375 : 3.42714680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbFoodLinQDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
       <nodes>
         <classShapeMoniker Id="2fe17c48-185d-4f18-b20b-262d4d0f6194" />
@@ -58,6 +58,31 @@
       <nodes>
         <classShapeMoniker Id="4dd0f9a7-18df-451c-acfc-787f88af929f" />
         <classShapeMoniker Id="f59dfc5c-927c-450c-8159-e3feb18f4805" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="06d2024d-4d58-49dd-a239-e6b80ccb6c26" absoluteBounds="1, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd9768e3-de01-4381-8c76-bb0b1a77d28d" absoluteBounds="1.0150000000000001, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f6f48b9-3139-4a95-a4c0-57ded3a9e45a" absoluteBounds="1, 2.875, 2, 2.5401025390625">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/BAIVIET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c61457fa-9102-4996-a113-eeef14eefded" absoluteBounds="1.0149999999999997, 3.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a663b13-77d5-43ab-aee2-60539ca52132" absoluteBounds="3.25, 4.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dbFoodLinQDataContext/MENU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33fbc65b-207c-44fa-a7fa-fa0624527c4b" absoluteBounds="3.2649999999999997, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.95863627929687 : 6.2131982421875); (3.95863627929687 : 6.4631982421875); (4.55523818359375 : 6.4631982421875); (4.55523818359375 : 6.2131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbFoodLinQDataContext/MENU/MENU_MENU" />
+      <nodes>
+        <classShapeMoniker Id="9a663b13-77d5-43ab-aee2-60539ca52132" />
+        <classShapeMoniker Id="9a663b13-77d5-43ab-aee2-60539ca52132" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

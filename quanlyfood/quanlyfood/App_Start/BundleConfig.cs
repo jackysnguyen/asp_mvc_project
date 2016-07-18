@@ -9,7 +9,10 @@ namespace quanlyfood
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.easing.1.3.js",
+                        "~/Scripts/jquery.carouFredSel-6.2.0-packed.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,18 +23,24 @@ namespace quanlyfood
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.backup.js",
+                      "~/Scripts/respond.js",
+                      "~/Scripts/camera.min.js",
+                      "~/Scripts/default.js",
+                      "~/Scripts/app.js"
+                      ))
+                      ;
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.backup.css",
                       "~/Content/bootstrap-responsive.css",
                       "~/Content/custom.css",
-                      "~/Content/font-awesome.css",
+                      "~/Content/font-awesome.4.3.css",
                       "~/Content/general-foundicons.css",
                       "~/Content/prettify.css",
                       "~/Content/social_foundicons.css",
                       "~/Content/style.css",
+                      "~/Content/camera.css",
                       "~/Content/site.css"));
         }
     }
