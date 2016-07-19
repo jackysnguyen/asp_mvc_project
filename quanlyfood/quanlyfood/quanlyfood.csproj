@@ -237,6 +237,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\blank.gif" />
+    <Content Include="images\cake.jpg" />
     <Content Include="images\camera-loader.gif" />
     <Content Include="images\camera_skins.png" />
     <Content Include="images\caprese.jpg" />
@@ -311,6 +312,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="uploads\cake-2.jpg" />
+    <Content Include="uploads\cake.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -350,6 +353,8 @@
     <Content Include="Views\HelloWorld\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
