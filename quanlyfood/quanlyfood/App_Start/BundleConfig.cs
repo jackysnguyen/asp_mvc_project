@@ -11,7 +11,9 @@ namespace quanlyfood
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery.easing.1.3.js",
-                        "~/Scripts/jquery.carouFredSel-6.2.0-packed.js"
+                        "~/Scripts/jquery.carouFredSel-6.2.0-packed.js",
+                        "~/Scripts/jquery.prettoPhoto.js",
+                        "~/Scripts/jquery.wookmark.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -37,11 +39,17 @@ namespace quanlyfood
                       "~/Content/custom.css",
                       "~/Content/font-awesome.4.3.css",
                       "~/Content/general-foundicons.css",
-                      "~/Content/prettify.css",
-                      "~/Content/social_foundicons.css",
-                      "~/Content/style.css",
-                      "~/Content/camera.css",
-                      "~/Content/site.css"));
+                      "~/Content/social_foundicons.css"
+                      ));
+
+            bundles.Add(new StyleBundle("~/Content/carousel-css").Include(
+                "~/Content/carousel-style.css",
+                "~/Content/camera.css"
+                      ));
+            bundles.Add(new StyleBundle("~/Content/wookmark-css").Include(
+                "~/Content/prettyPhoto.css",
+                "~/Content/wookmark-style.css"
+                      ));
         }
     }
 }

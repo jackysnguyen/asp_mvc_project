@@ -1,0 +1,75 @@
+﻿
+@using PagedList.Mvc;
+@model PagedList.PagedList<quanlyfood.Models.BANH>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+
+}
+@Styles.Render("~/Content/wookmark-css")
+<div class="container">
+
+    <div class="divPanel page-content">
+
+        <div class="breadcrumbs">
+            <a href="/">Trang chủ</a> &nbsp;/&nbsp; <span>Danh sách sản phẩm</span>
+        </div>
+        <!--Edit Main Content Area here-->
+        <div class="row-fluid">
+            <div class="span3">
+                <h3>Các loại bánh khác</h3>
+                <div class="row-fluid">
+                    <ul class="nav nav-list">
+                        <li class=""><a href="/product/list">Tất cả</a></li>
+                        @foreach (var category in ViewBag.list_categories)
+                        {
+                            <li class=""><a href="/product/list/@category.MaLoai">@category.TenLoai</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="span9">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h1></h1>
+                        <div id="gridArea">
+                            @foreach (var product in ViewBag.list_product)
+                            {
+                                <ul id="tiles">
+                                    <li>
+                                        <a href="styles/thumbs/sticky_800.jpg" title="Sticky" rel="prettyPhoto[gallery1]"><img src="@product.AnhBia" alt="Sticky" title="Sticky" /></a>
+                                        <h4><a href="/product/detail/@product.MaMon">@product.TenMon </a></h4>
+                                        <p>@product.MoTaNgan</p>
+                                    </li>
+                                </ul>
+                            }
+                        </div>
+                      </div>
+                   </div>
+                  <div class="row-fluid">
+                        <div class="span12">
+                            
+
+                            <div class="pagination">
+                                <ul>
+                                    
+                                    @for (var i = 1; i <= ViewBag.list_product.PageCount; i++)
+                                    {
+                                        <li><a href="@Url.Action("List", "Product", new { id = @ViewBag.category_id, page = @i })">@i</a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        
+            <!--End Main Content Area here-->
+
+            <div id="footerInnerSeparator"></div>
+        </div>
+
+</div>
+
+
+

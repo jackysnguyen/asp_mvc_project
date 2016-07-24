@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="container">
+    <div class="divPanel page-content">
+        <div class="breadcrumbs">
+            <a href="/">Trang chủ</a> &nbsp;/&nbsp; <span>Danh sách sản phẩm</span>
+        </div>
+        <div class="row-fluid">
+            <div class="span3">
+                <h3>Các loại bánh khác</h3>
+                <div class="row-fluid">
+                    <ul class="nav nav-list">
+                        <li class=""><a href="/product/list">Tất cả</a></li>
+                        @foreach (var category in ViewBag.list_categories)
+                        {
+                            <li class=""><a href="/product/list/@category.MaLoai">@category.TenLoai</a></li>
+                        }
+                    </ul>
+                </div>
+             </div>
+            <div class="span9" id="divMain">
+
+                <h1>@ViewBag.product_detail.TenMon</h1>
+                <hr>
+                <img src="/images/full-image.jpg" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
+                @ViewBag.product_detail.MoTa
+                <div class="row-fluid">
+                    <div class="fb-comments" data-href="@Request.Url.OriginalString" data-numposts="5" data-width="800"></div>
+                </div>
+            </div>	
+            
+       </div>
+</div>
