@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<h2>Login</h2>
+
+<div class="container">
+
+    <div class="divPanel page-content">
+
+        <div class="breadcrumbs">
+            <a href="/">Trang chủ</a> &nbsp;/&nbsp; <span>Đăng ký</span>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span8" id="divMain">
+
+                <h1>Đăng Nhập</h1>
+                <h3 style="color:#FF6633;">@Html.ValidationSummary(true)</h3>
+                <hr>
+                <!--Start Contact form -->
+                <form name="enq" method="post" action="" onsubmit="return validation();">
+                    <fieldset>
+                        <input type="text" name="username" id="username" value="" class="input-block-level" placeholder="Tên đăng nhập" />
+                        <input type="password" name="password" id="password" value="" class="input-block-level" placeholder="Mật khẩu" />
+                        <div class="actions">
+                            <input type="submit" value="Đăng Nhập" name="submit" id="submitButton" class="btn btn-info pull-right" title="Đăng Nhập" />
+                        </div>
+                    </fieldset>
+                </form>
+                <!--End Contact form -->
+            </div>
+
+            <!--Edit Sidebar Content here-->
+            <div class="span4 sidebar">
+
+                <div class="sidebox">
+                    <h3 class="sidebox-title">Contact Information</h3>
+                    <p>
+                        <address>
+                            <strong>Your Company, Inc.</strong><br />
+                            Address<br />
+                            City, State, Zip<br />
+                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                        </address>
+                        <address>
+                            <strong>Email</strong><br />
+                            <a href="mailto:#">first.last@gmail.com</a>
+                        </address>
+                    </p>
+
+                    <!-- Start Side Categories -->
+                    <h4 class="sidebox-title">Sidebar Categories</h4>
+                    <ul>
+                        <li><a href="#">Quisque diam lorem sectetuer adipiscing</a></li>
+                        <li><a href="#">Interdum vitae, adipiscing dapibus ac</a></li>
+                        <li><a href="#">Scelerisque ipsum auctor vitae, pede</a></li>
+                        <li><a href="#">Donec eget iaculis lacinia non erat</a></li>
+                        <li><a href="#">Lacinia dictum elementum velit fermentum</a></li>
+                        <li><a href="#">Donec in velit vel ipsum auctor pulvinar</a></li>
+                    </ul>
+                    <!-- End Side Categories -->
+
+                </div>
+
+
+
+            </div>
+            <!--/End Sidebar Content-->
+
+
+        </div>
+
+        <div id="footerInnerSeparator"></div>
+    </div>
+
+</div>
