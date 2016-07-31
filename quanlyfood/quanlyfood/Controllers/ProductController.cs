@@ -25,7 +25,7 @@ namespace quanlyfood.Controllers
             
 
             page_info["page_number"] = page_number;
-            page_info["page_size"] = page_size; ;
+            page_info["page_size"] = page_size; 
             
             
             List<BanhModel> list_products = product.getListProduct(id);

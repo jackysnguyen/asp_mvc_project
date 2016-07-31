@@ -16,6 +16,13 @@ namespace quanlyfood
                         "~/Scripts/jquery.wookmark.js"
                         ));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery-admin").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/Admin/bootstrap.js",
+                        "~/Scripts/Admin/metisMenu.js",
+                        "~/Scripts/Admin/sb-admin-2.js"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -32,6 +39,15 @@ namespace quanlyfood
                       "~/Scripts/app.js"
                       ))
                       ;
+
+            bundles.Add(new StyleBundle("~/Content/css-admin").Include(
+                      "~/Content/Admin/bootstrap.css",
+                      "~/Content/Admin/bootstrap-theme.css",
+                      "~/Content/Admin/metisMenu.css",
+                      "~/Content/Admin/sb-admin-2.css",
+                      "~/Content/Admin/timeline.css",
+                      "~/Content/font-awesome.4.3.css"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.backup.css",
