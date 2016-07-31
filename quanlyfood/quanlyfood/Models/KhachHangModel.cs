@@ -7,15 +7,14 @@ namespace quanlyfood.Models
 {
     public class KhachHangModel
     {
-        public int MaMon { get; set; }
-        public string TenMon { get; set; }
-        public decimal? GiaBan { get; set; }
-        public string MoTaNgan { get; set; }
-        public string MoTa { get; set; }
-        public string AnhBia { get; set; }
-        public DateTime? Ngaycapnhat { get; set; }
-        public int? MaLoai { get; set; }
-        public byte? TrangThai { get; set; }
+        public int MaKH { get; set; }
+        public string HoTen { get; set; }
+        public string Taikhoan { get; set; }
+        public string Matkhau { get; set; }
+        public string Email { get; set; }
+        public string DiachiKH { get; set; }
+        public DateTime? Ngaysinh { get; set; }
+        public string DienthoaiKH { get; set; }
         
 
     }

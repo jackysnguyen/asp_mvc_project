@@ -102,6 +102,46 @@ namespace quanlyfood.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(FormCollection form, KHACHHANG kh)
+        {
+            var username = form["username"];
+            var password = form["password"];
+            if (String.IsNullOrEmpty(username))
+            {
+                ViewData["loi_username"] = "Username không được trống";
+                return this.Login();
+            }else if (String.IsNullOrEmpty(password))
+            {
+                ViewData["loi_password"] = "Mật khẩu không được trống";
+                return this.Login();
+            }else
+            {
+                kh.Taikhoan = username;
+                kh.Matkhau = password;
+                KhachHangModel customer = customer_repository.getCustomerByUsername(kh);
+                if(customer != null)
+                {
+                    ViewBag.alert = "Đăng nhập thành công";
+                    Session["TaiKhoan"] = customer;
+                }else
+                {
+                    ViewBag.alert = "Tên đăng nhập hoặc mật khẩu không đúng";
+
+                }
+            }
+            return View();
+            
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session["TaiKhoan"] = null;
+            ViewBag.alert = "Đăng xuất thành công";
+            return RedirectToAction("Login");
+        }
+
 
 
 

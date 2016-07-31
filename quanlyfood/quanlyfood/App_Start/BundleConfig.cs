@@ -12,7 +12,7 @@ namespace quanlyfood
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery.easing.1.3.js",
                         "~/Scripts/jquery.carouFredSel-6.2.0-packed.js",
-                        "~/Scripts/jquery.prettoPhoto.js",
+                        "~/Scripts/jquery.prettyPhoto.js",
                         "~/Scripts/jquery.wookmark.js"
                         ));
 

@@ -1,4 +1,6 @@
-﻿<div id="divFooter" class="footerArea">
+﻿@using quanlyfood.Models
+
+<div id="divFooter" class="footerArea">
 
     <div class="container">
 
@@ -21,21 +23,19 @@
                 </div>
                 <div class="span3" id="footerArea2">
 
-                    <h3>Recent Blog Posts</h3>
+                    <h3></h3>
                     <p>
-                        <a href="#" title="">Lorem Ipsum is simply dummy text</a><br />
-                        <span style="text-transform:none;">2 hours ago</span>
-                    </p>
-                    <p>
-                        <a href="#" title="">Duis mollis, est non commodo luctus</a><br />
-                        <span style="text-transform:none;">5 hours ago</span>
-                    </p>
-                    <p>
-                        <a href="#" title="">Maecenas sed diam eget risus varius</a><br />
-                        <span style="text-transform:none;">19 hours ago</span>
-                    </p>
-                    <p>
-                        <a href="#" title="">VIEW ALL POSTS</a>
+                        <a href="/customer/register" title="">Đăng ký</a><br />
+                        @if (Session["TaiKhoan"] != null)
+                        {
+                            KhachHangModel kh = (KhachHangModel)Session["TaiKhoan"];
+                            <a href="/customer/logout" title="">@kh.HoTen | Đăng Xuất</a>
+                        }
+                        else
+                        {
+                            <a href="/customer/login" title="">Đăng Nhập</a>
+                        }
+                        
                     </p>
 
                 </div>

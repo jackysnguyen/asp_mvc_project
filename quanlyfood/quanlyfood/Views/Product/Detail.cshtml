@@ -26,12 +26,16 @@
 
                 <h1>@ViewBag.product_detail.TenMon</h1>
                 <hr>
-                <img src="/images/full-image.jpg" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
+                <img src="@ViewBag.product_detail.AnhBia" class="img-polaroid" style="margin:5px 0px 15px;" alt="">
                 @ViewBag.product_detail.MoTa
+                <div class="row-fluid">
+                    <a class="btn btn-primary" href="@Url.Action("addToCart", "Cart", new { @ma_banh = @ViewBag.product_detail.MaMon , @redirect_url = Request.Url.ToString()})">Đặt Mua</a>
+                 </div>
                 <div class="row-fluid">
                     <div class="fb-comments" data-href="@Request.Url.OriginalString" data-numposts="5" data-width="800"></div>
                 </div>
             </div>	
             
        </div>
+</div>
 </div>

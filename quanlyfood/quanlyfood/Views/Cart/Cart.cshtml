@@ -1,0 +1,70 @@
+﻿@using quanlyfood.Models
+@model List<CartModel>
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<div class="container">
+
+    <div class="divPanel page-content">
+
+        <div class="breadcrumbs">
+            <a href="/">Trang Chủ</a> &nbsp;/&nbsp; <span>Giỏ Hàng</span>
+        </div>
+
+        <div class="row-fluid">
+            <!--Edit Main Content Area here-->
+            <div class="span12" id="divMain">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Mã Bánh</th>
+                            <th>Tên Bánh</th>
+                            <th>Ảnh Bìa</th>
+                            <th>Số Lượng</th>
+                            <th>Đơn Giá</th>
+                            <th>Thành Tiền</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>1</td>
+                                <td>@item.MaBanh</td>
+                                <td>@item.TenBanh</td>
+                                <td><img src="@item.AnhBia" style="width:80px; height:80px"/></td>
+                                @using (Html.BeginForm("UpdateCart", "cart", new { @ma_banh = item.MaBanh }))
+                                {
+                                    <td><input type="number" min="1" value="@item.SoLuong" name="number" /></td>
+                                    <td>@String.Format("{0:0,0}", @item.DonGia)</td>
+                                    <td>@String.Format("{0:0,0}", @item.ThanhTien)</td>
+                                    <td><a href="@Url.Action("Detail", "Product", new { id = item.MaBanh })">Chi tiết</a></td>
+                                    <td><a href="@Url.Action("DeleteBanh", "Cart", new { id = item.MaBanh })">Xóa</a></td>
+                                    <td><button type="submit">Cập Nhật</button></td>
+                                }
+                            </tr>
+                        }
+                        <tr>
+                            <td colspan="4">Số lượng bánh: @ViewBag.total_number</td>
+                            <td colspan="5">Tổng tiền: @String.Format("{0:0,0}", @ViewBag.total_pay) Đồng </td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">@Html.ActionLink("Đặt Hàng", "checkout", "cart")</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--End Main Content Area-->
+        </div>
+
+        <div id="footerInnerSeparator"></div>
+    </div>
+
+</div>
+

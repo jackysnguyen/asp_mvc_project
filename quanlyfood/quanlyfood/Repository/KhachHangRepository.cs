@@ -21,5 +21,19 @@ namespace quanlyfood.Repository
 
         }
 
+        public KhachHangModel getCustomerByUsername(KHACHHANG kh)
+        {
+            var customer = from ctm in data.KHACHHANGs
+                                      where ctm.Taikhoan == kh.Taikhoan && ctm.Matkhau == kh.Matkhau
+                                      select new KhachHangModel()
+                                      {
+                                          MaKH = ctm.MaKH,
+                                          HoTen = ctm.HoTen
+                                          
+                                      };
+            return customer.SingleOrDefault();
+
+        }
+
     }
 }
