@@ -94,6 +94,17 @@ namespace quanlyfood.Repository
             return banh_detail.First();
         }
 
+        public BanhModel addProduct(BANH product)
+        {
+            data.BANHs.InsertOnSubmit(product);
+            data.SubmitChanges();
+            BanhModel product_model = new BanhModel();
+            product_model.MaMon = product.MaMon;
+            product_model.TenMon = product.TenMon;
+            return product_model;
+
+        }
+
 
     }
 }

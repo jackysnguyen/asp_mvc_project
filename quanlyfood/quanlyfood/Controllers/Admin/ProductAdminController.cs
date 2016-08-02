@@ -7,13 +7,14 @@ using quanlyfood.Repository;
 using quanlyfood.Models;
 using PagedList;
 using PagedList.Mvc;
+using System.IO;
+
 
 namespace quanlyfood.Controllers.Admin
 {
     [RoutePrefix("admin")]
-    public class ProductAdminController : Controller
+    public class ProductAdminController : BaseAdminController
     {
-
         BanhRepository product_repository = new BanhRepository();
 
         [Route("product/list")]
@@ -34,18 +35,51 @@ namespace quanlyfood.Controllers.Admin
             return View();
         }
 
+        [Route("product/add")]
         // GET: BanhAdmin/Create
         public ActionResult Create()
         {
+            ViewBag.categories = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai");
             return View();
         }
 
+        [Route("product/add")]
         // POST: BanhAdmin/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateInput(false)]
+        public ActionResult Create(BANH product, FormCollection collection, HttpPostedFileBase anhbia)
         {
+            var anh_bia = Path.GetFileName(anhbia.FileName);
+            var path = Path.Combine(Server.MapPath("~/uploads"), anh_bia);
+            ViewBag.categories = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai");
+            if(anhbia == null)
+            {
+                ViewBag.thong_bao = "Vui lòng chọn ảnh bìa";
+                return View();
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    if (System.IO.File.Exists(path))
+                    {
+                        ViewBag.thong_bao = "Hình ảnh đã tồn tại";
+                        return View();
+                    }
+                    else
+                    {
+                        anhbia.SaveAs(path);
+                    }
+                    
+                }
+                
+            }
+
             try
             {
+                product.AnhBia = "/uploads/"+anh_bia;
+                data.BANHs.InsertOnSubmit(product);
+                data.SubmitChanges();
                 // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
@@ -54,6 +88,7 @@ namespace quanlyfood.Controllers.Admin
             {
                 return View();
             }
+
         }
 
         // GET: BanhAdmin/Edit/5
