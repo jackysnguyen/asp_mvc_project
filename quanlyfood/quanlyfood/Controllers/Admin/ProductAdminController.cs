@@ -39,7 +39,7 @@ namespace quanlyfood.Controllers.Admin
         // GET: BanhAdmin/Create
         public ActionResult Create()
         {
-            ViewBag.categories = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai");
+            ViewBag.MaLoai = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai");
             return View();
         }
 
@@ -51,7 +51,7 @@ namespace quanlyfood.Controllers.Admin
         {
             var anh_bia = Path.GetFileName(anhbia.FileName);
             var path = Path.Combine(Server.MapPath("~/uploads"), anh_bia);
-            ViewBag.categories = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai");
+            ViewBag.MaLoai = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai");
             if(anhbia == null)
             {
                 ViewBag.thong_bao = "Vui lòng chọn ảnh bìa";
@@ -91,40 +91,64 @@ namespace quanlyfood.Controllers.Admin
 
         }
 
+        [Route("product/edit/{id:int}")]
         // GET: BanhAdmin/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
-        }
-
-        // POST: BanhAdmin/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
+            BANH product = data.BANHs.SingleOrDefault(n => n.MaMon == id);
+            ViewBag.MaLoai = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai", product.MaLoai);
+            if (product == null)
             {
-                // TODO: Add update logic here
-
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(product);
         }
 
-        // GET: BanhAdmin/Delete/5
+        [Route("product/edit/{id:int}")]
+        // POST: BanhAdmin/Edit/5
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(int id, FormCollection collection, HttpPostedFileBase anhbia)
+        {
+            
+            var product = data.BANHs.SingleOrDefault(n => n.MaMon == id);
+            ViewBag.MaLoai = new SelectList(data.LOAIs.ToList(), "MaLoai", "TenLoai", product.MaLoai);
+            
+                if(anhbia != null)
+                {
+                    var anh_bia = Path.GetFileName(anhbia.FileName);
+                    var path = Path.Combine(Server.MapPath("~/uploads"), anh_bia);
+                    if (System.IO.File.Exists(path))
+                    {
+                        ViewBag.thong_bao = "Hình ảnh đã tồn tại";
+                        return View(product);
+                    } else{
+                        anhbia.SaveAs(path);
+                        product.AnhBia = "/uploads/" + anh_bia;
+                    }
+
+
+                }
+
+                product.TenMon = collection["TenMon"];
+                product.GiaBan = decimal.Parse(collection["GiaBan"].ToString());
+                product.MoTaNgan = collection["MoTaNgan"];
+                product.MoTa = collection["MoTa"];
+                product.MaLoai = int.Parse(collection["MaLoai"]);
+                product.TrangThai = byte.Parse(collection["TrangThai"].ToString());
+                data.SubmitChanges();
+                return RedirectToAction("Index");
+            
+        }
+
+        [Route("product/delete/{id:int}")]
         public ActionResult Delete(int id)
         {
-            return View();
-        }
-
-        // POST: BanhAdmin/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
+            var product = data.BANHs.SingleOrDefault(n => n.MaMon == id);
             try
             {
+                product.TrangThai = 0;
+                data.SubmitChanges();
                 // TODO: Add delete logic here
 
                 return RedirectToAction("Index");

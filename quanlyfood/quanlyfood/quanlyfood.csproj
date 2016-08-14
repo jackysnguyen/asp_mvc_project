@@ -409,6 +409,7 @@
     <Content Include="Views\Shared\SidebarAdmin.cshtml" />
     <Content Include="Views\ProductAdmin\Index.cshtml" />
     <Content Include="Views\ProductAdmin\Create.cshtml" />
+    <Content Include="Views\ProductAdmin\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

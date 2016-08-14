@@ -66,6 +66,8 @@ namespace quanlyfood
                 "~/Content/prettyPhoto.css",
                 "~/Content/wookmark-style.css"
                       ));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
