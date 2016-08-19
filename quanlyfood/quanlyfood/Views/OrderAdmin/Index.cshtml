@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Danh sách đơn hàng</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Mã Đơn Hàng</th>
+                                    <th>Tình Trạng Giao Hàng</th>
+                                    <th>Ngày Đặt</th>
+                                    <th>Ngày Giao</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int index = 1;}
+                                @foreach (var item in ViewBag.list_orders)
+                                {
+                                    <tr>
+                                        <td>@index</td>
+                                        <td><a href="/admin/order/edit/@item.MaDonHang">@item.MaDonHang</a></td>
+                                        <td>
+                                            @if(@item.TinhTrangGiaoHang == false)
+                                            {
+                                                @Html.Raw("Chưa Giao Hàng");
+                                            }
+                                            else
+                                            {
+                                                @Html.Raw("Đã Giao Hàng");
+                                            }
+                                        </td>
+                                        <td>@String.Format("{0:MM/dd/yyyy}", @item.NgayDat)</td>
+                                        <td>
+                                            @String.Format("{0:MM/dd/yyyy}", @item.NgayGiao)
+                                        </td>
+                                    </tr>
+                                    index++;
+                                }
+                                
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                
+                                @for (var i = 1; i <= ViewBag.list_orders.PageCount; i++)
+                                {
+                                    <li><a href="@Url.Action("Index", "OrderAdmin", new { page = @i })">@i</a></li>
+                                }
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

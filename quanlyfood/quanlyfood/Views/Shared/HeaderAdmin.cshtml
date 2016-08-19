@@ -1,4 +1,5 @@
-﻿<ul class="nav navbar-top-links navbar-right">
+﻿@using quanlyfood.Models
+<ul class="nav navbar-top-links navbar-right">
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
             <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -195,7 +196,13 @@
         </a>
         <ul class="dropdown-menu dropdown-user">
             <li>
-                <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                <a href="#"><i class="fa fa-user fa-fw"></i> 
+                @if (Session["admin"] != null)
+                {
+                    ADMIN admin = (ADMIN)Session["admin"];
+                    <a href="/customer/logout" title="">@admin.username | Đăng Xuất</a>
+                }
+                </a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>

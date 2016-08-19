@@ -1,0 +1,84 @@
+﻿@model quanlyfood.Models.OrderModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cập nhật đơn hàng</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @using (Html.BeginForm("Edit", "Order", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+                                    <h4>Đơn hàng</h4>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.MaDonHang)
+                                    <div class="row-fluid">
+                                        <!--Edit Main Content Area here-->
+                                        <div class="span12" id="divMain">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Tên Bánh</th>
+                                                        <th>Số Lượng</th>
+                                                        <th>Đơn Giá</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var item in ViewBag.order.orderDetail)
+                                                    {
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>@item.TenBanh</td>
+                                                            <td>@item.Soluong</td>
+                                                            <td>@String.Format("{0:0,0}", @item.DonGia)</td>
+                                                        </tr>
+                                                    }
+                                                    <tr>
+                                                        
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--End Main Content Area-->
+                                    </div>
+                                    <!--<div class="form-group">
+                                        @Html.LabelFor(model => model.TinhTrangGiaoHang, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.TinhTrangGiaoHang, new { htmlAttributes = new { @class = "" } })
+                                            @Html.ValidationMessageFor(model => model.TinhTrangGiaoHang, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Save" class="btn btn-default" />
+                                        </div>
+                                    </div>-->
+                                </div>
+                            }
+                            <div>
+                                @Html.ActionLink("Back to List", "Index")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
