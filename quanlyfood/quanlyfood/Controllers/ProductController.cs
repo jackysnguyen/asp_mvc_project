@@ -30,7 +30,7 @@ namespace quanlyfood.Controllers
             
             List<BanhModel> list_products = product.getListProduct(id);
             List<LoaiModel> list_product_category = product.getListProductCategory();
-            ViewBag.list_product = list_products.ToPagedList(page_number, 20);
+            ViewBag.list_product = list_products.ToPagedList(page_number, 7);
             ViewBag.list_categories = list_product_category;
             ViewBag.category_id = id;
             return View();
