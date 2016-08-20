@@ -50,5 +50,14 @@ namespace quanlyfood.Controllers.Admin
             return View();
 
         }
+
+        [Route("logout")]
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session["admin"] = null;
+            ViewBag.alert = "Đăng xuất thành công";
+            return RedirectToAction("login", "login");
+        }
     }
 }
