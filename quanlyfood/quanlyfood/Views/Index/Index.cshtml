@@ -5,6 +5,8 @@
 }
 
 @Styles.Render("~/Content/carousel-css")
+
+
 <div id="decorative1" style="position:relative">
     <div class="container">
 
@@ -97,20 +99,16 @@
                 </div>
                 <br />
 
-                <div class="list_carousel responsive">
-                    <ul id="list_photos">
-                        <li><img src="carousal/muffin.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/strawberries.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/cheesecake.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/peppers.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/pomengranates.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/refreshment.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/kitchen.jpg" class="img-polaroid">  </li>
-                        <li><img src="carousal/soup.jpg" class="img-polaroid">  </li>
-                    </ul>
-                </div>
+                <style>
+                    #map {
+                        width: 100%;
+                        height: 400px;
+                    }
+                </style>
 
-                </br>
+                <div id="map"></div>
+                
+
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu metus risus. Mauris a facilisis justo, sit amet ornare lorem. In volutpat laoreet nisi, ac tempus dui convallis eget. Ut id lorem at leo suscipit dignissim. Donec eleifend porta sagittis. Aliquam at ullamcorper sem, et commodo quam.</p></br>
                 <!--Edit Blockquote here-->
@@ -129,9 +127,11 @@
 
         </div>
         <!--End Main Content Area here-->
+        
 
         <div id="footerInnerSeparator"></div>
     </div>
 
+    
 </div>
 

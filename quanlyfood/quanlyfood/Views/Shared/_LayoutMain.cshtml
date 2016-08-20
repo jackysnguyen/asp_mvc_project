@@ -41,7 +41,25 @@
           js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.7&appId=1675099536065164";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+        function initMap() {
+            var latlng = new google.maps.LatLng(10.776558, 106.689565); //Tọa độ cửa hàng
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: latlng,
+                zoom: 16 //Độ phóng to của bản đồ
+            });
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: "Jespère Bakery" //Tên hiển thị khi đưa chuột vào địa điểm
+            });
+        }
+
     </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqr7uWC7qaznJ9lEe9BI-_yXClLkcza8Q&callback=initMap">
+    </script>
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>
